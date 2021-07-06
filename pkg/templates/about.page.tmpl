@@ -8,6 +8,14 @@
                 <p>This is a paragraph of text</p>
 
                 <p>This is the text in test <span class="font-weight-bold">{{index .StringMap "test"}}</span>.</p>
+
+                <p>
+                    {{ if ne (index .StringMap "remote_ip") "" }}
+                        <h1 style="color: blue">Your IP Address is {{ index .StringMap "remote_ip" }}.
+                    {{ else }}
+                        <h2>I don't know your IP yet... Visit <a href="/">Home Page</a></h2>
+                    {{ end }}
+                </p>
             </div>
         </div>
     </div>
